@@ -14,7 +14,7 @@
 # You must have this file (eek.sh) and the template file (template.sh) in the same directory.
 # Execute the script as follows:
 #
-# . ./eek.sh input_filename number_proc queue_name runtime_in_mins
+# . ./eek.sh input_filename number_proc queue_name runtime_in_mins memory_in_mb
 #
 # input_filename: assumes .gjf extension (e.g., write "test01" instead of "test01.gjf")
 # number_proc: the number of processors you want (should match input file)
@@ -59,20 +59,9 @@ if [ -f $inputFilename ]; then
     username=$(whoami)
     cores=$2
     queue=$3
-    # add 2 GB to the memory requested in g09
-    mem=`grep %mem $inputFilename | cut -f 2 -d"=" | sed s/GB/000/ | sed s/MB// | awk '{print $1+2000}'`
-    if [ -z "$4" ]; then
-        runtime=10000 # default runtime is one week
-    else
-        runtime=$4
-    fi
+    runtime=$4
+    mem=$5
     jobname=$jobdir
-
-    # check all fields present
-    if [ -z "$mem" ]; then
-        echo Error in memory specification.
-        exit 1
-    fi
 
     # create template script
     sed s/@CORES/$cores/g template.sh | sed s/@QUEUE/$queue/g | sed s/@MEM/$mem/g | sed s/@RUNTIME/$runtime/g | sed s/@JOBNAME/$jobname/g | sed s/@USERNAME/$username/g > $jobname.sh

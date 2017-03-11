@@ -13,10 +13,10 @@
 # general 64, set nprocshared=64
 
 # check number of command line arguments
-if (( $# < 2 )); then
+if [ "$#" -ne 4 ]; then
     echo Invalid number of command-line arguments.
     echo
-    echo Usage: ./submit.sh number_of_processors desired_queue expected_runtime_in_mins
+    echo Usage: ./submit.sh number_of_processors desired_queue expected_runtime_in_mins memory_in_MB
     exit 1
 fi
 
@@ -27,7 +27,7 @@ echo
 for i in *.gjf; do
  
  echo "Submitting job file ${i%%.gjf}..."
- . ./eek.sh ${i%%.gjf} ${1} ${2} ${3}
+ . ./eek.sh ${i%%.gjf} ${1} ${2} ${3} ${4}
  echo
 done
 
