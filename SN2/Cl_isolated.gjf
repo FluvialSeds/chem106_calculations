@@ -1,0 +1,9 @@
+%mem=1GB
+#p am1 opt freq=noraman
+
+isolated chloride anion
+
+-1 1
+ Cl                -0.47766800   -0.86708700    2.00425800
+
+
