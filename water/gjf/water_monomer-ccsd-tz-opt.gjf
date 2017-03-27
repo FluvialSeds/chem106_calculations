@@ -1,0 +1,13 @@
+%chk=g09.chk
+%nprocshared=8
+%mem=24GB
+#p cssd cc-pvtz opt freq=noraman
+
+water monomer
+
+0 1
+O  -1.551007  -0.114520   0.000000
+H  -1.934259   0.762503   0.000000
+H  -0.599677   0.040712   0.000000
+
+

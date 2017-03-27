@@ -1,0 +1,13 @@
+%chk=g09.chk
+%nprocshared=8
+%mem=24GB
+#p ccsd(t) cc-pVDZ
+
+water monomer CCSD(T)/cc-pVQZ geometry
+
+0 1
+O  0.000000    0.118005    0.000000
+H  0.753667   -0.472069    0.000000
+H -0.753667   -0.471972    0.000000
+
+
