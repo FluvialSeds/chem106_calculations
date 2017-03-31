@@ -8,7 +8,7 @@ FNR == 1 {
 fileCount == 1 || fileCount == 3 {print}
 
 fileCount == 2 {
-    if ( length($0) == 0 )
+    if ( length($0) <= 2 )
         spaces++
     if ( spaces == 2 )
         {
