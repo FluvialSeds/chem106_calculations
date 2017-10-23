@@ -32,7 +32,7 @@ echo "Job @JOBNAME started at..." >> log.txt
 date >> log.txt
 
 # run job
-g09 @JOBNAME.gjf @JOBNAME.out
+g16 @JOBNAME.gjf @JOBNAME.out
 
 # remove temporary directory
 rm -rf /scratch/@USERNAME_@JOBNAME

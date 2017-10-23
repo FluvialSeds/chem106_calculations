@@ -9,8 +9,8 @@ fi
 
 # load modules
 source new-modules.sh
-module load gaussian/09_D.01-fasrc01
-module load git/2.1.0-fasrc01
+module load gaussian/16-fasrc01
+module load git
 
 # Set max core dump size to 0.
 
